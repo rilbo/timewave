@@ -2,13 +2,13 @@
   <img src="https://your-awesome-timewave-logo.png" alt="TimeWave Logo" width="200" height="200">
 </p>
 
-# TimeWave 🌊 - La Vague Temporelle
+# TimeWave-Dashboard 🌊 - La Vague Temporelle
 
 > L'application qui rend la gestion des heures en entreprise plus facile que de compter jusqu'à trois !
 
 ## 🕒 De quoi s'agit-il ?
 
-TimeWave est la solution ultime pour révolutionner la gestion du temps dans votre entreprise. Dites adieu aux tracas, aux feuilles de temps déroutantes et aux heures supplémentaires oubliées ! Notre application élégante et conviviale vous permet de garder un œil sur le temps et la productivité de vos employés en temps réel.
+TimeWave Dashboard est la solution ultime pour révolutionner la gestion du temps dans votre entreprise. Dites adieu aux tracas, aux feuilles de temps déroutantes et aux heures supplémentaires oubliées ! Notre application élégante et conviviale vous permet de garder un œil sur le temps et la productivité de vos employés en temps réel.
 
 ## 🚀 Fonctionnalités incroyables
 
@@ -16,35 +16,38 @@ TimeWave est la solution ultime pour révolutionner la gestion du temps dans vot
 ✅ Intuitif : Une interface simple et élégante pour une utilisation sans effort.
 ✅ Rapports puissants : Obtenez des informations exploitables pour optimiser votre entreprise.
 ✅ Compatibilité totale : Application mobile en Flutter, tableau de bord Laravel + React + Inertia + Tailwind.
-✅ Le temps, c'est de l'argent : Économisez du temps et de l'argent avec TimeWave.
+
+## 💻 Technologies Utilisées
+
+TimeWave Dashboard a été créé avec une pile technologique puissante pour offrir une expérience utilisateur exceptionnelle. Voici les principaux outils et technologies que nous avons utilisés :
+  
+- Tableau de Bord (Laravel + React + Inertia + Tailwind) :
+  - [Laravel](https://laravel.com/) - Framework PHP élégant pour la création de l'API et de l'application web.
+  - [React](https://reactjs.org/) - Bibliothèque JavaScript pour la création d'interfaces utilisateur interactives.
+  - [Inertia](https://inertiajs.com/) - Middleware qui combine React et Laravel sans API REST.
+  - [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilitaire pour un design rapide et esthétique.
+
+## 📱 TimeWave - Application
+
+Ce projet est en lien avec l'application destinée à chaque employé, sur laquelle ils pourront enregistrer leurs heures de travail.
+
+Lien du Référentiel : [Lien du Répo](https://lien-vers-votre-repo.com)
 
 ## 🔧 Installation
 
-1. Clonez le dépôt : `git clone https://github.com/votre-utilisateur/timewave.git`
-2. Allez dans le répertoire du projet : `cd timewave`
-3. Installez les dépendances :
-   - Application mobile Flutter : `flutter pub get`
-   - Tableau de bord Laravel : `composer install`
-   - Tableau de bord React : `cd dashboard && npm install`
-4. Configurez votre environnement selon les instructions spécifiques de chaque partie.
+En cours...
 
 ## 📸 Capture d'écran
 
-![TimeWave Dashboard](https://link-to-your-dashboard-screenshot.com)
+En cours...
 
 ## 🚧 Contribuer
 
-Vous avez des idées pour améliorer TimeWave ? Nous adorons les contributions ! Suivez ces étapes pour commencer :
-
-1. Fork du projet
-2. Créez une branche (`git checkout -b feature/amazing-feature`)
-3. Commitez vos changements (`git commit -m 'Ajouter une fonctionnalité incroyable'`)
-4. Poussez sur la branche (`git push origin feature/amazing-feature`)
-5. Ouvrez une demande de fusion (Pull Request)
+En cours...
 
 ## 💬 Besoin d'aide ?
 
-Si vous avez des questions, des problèmes ou simplement envie de discuter, rejoignez notre [communauté sur Discord](https://link-to-your-discord-channel.com).
+En cours...
 
 ## 📝 Licence
 
