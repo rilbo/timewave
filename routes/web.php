@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -25,9 +26,34 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Groupe de routes pour les pages accessibles uniquement aux utilisateurs authentifiés
+Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Admin/Dashboard');
+    })->name('dashboard');
+
+    Route::get('/namesites', function () {
+        return Inertia::render('Admin/Namesites');
+    })->name('namesites');
+
+    Route::get('/travelzone', function () {
+        return Inertia::render('Admin/Travelzone');
+    })->name('travelzone');
+
+    Route::get('/users', [UsersController::class, 'index'])->name('users');
+
+    Route::group(['prefix' => 'user'], function(){
+        Route::get('/create', [UsersController::class, 'create'])->name('user.create');
+        Route::post('/create', [UsersController::class, 'store'])->name('user.store');
+    
+        Route::get('/{id}', [UsersController::class, 'show'])->name('user.show');
+        
+        Route::get('/edit/{id}', [UsersController::class, 'edit'])->name('user.edit');
+        Route::patch('/edit/{id}', [UsersController::class, 'update'])->name('user.update');
+    
+        Route::delete('/delete/{id}', [UsersController::class, 'destroy'])->name('user.destroy');
+    });
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

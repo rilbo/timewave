@@ -64,4 +64,33 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Roles::class, 'id_role');
     }
+
+    /**
+     * Get the times for the user.
+     */
+    public function times()
+    {
+        return $this->hasMany(Times::class, 'id_user');
+    }
+
+    /**
+     * Get the user's full name.
+     *
+     * @return string
+     */
+    public function getFullNameAttribute(): string
+    {
+        return "{$this->firstname} {$this->lastname}";
+    }
+
+    /**
+     * Generate a random password.
+     *
+     * @return string
+     */
+
+    public static function generatePassword(): string
+    {
+        return substr(md5(rand()), 0, 8);
+    }
 }
