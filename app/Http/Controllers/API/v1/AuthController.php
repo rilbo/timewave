@@ -10,12 +10,21 @@ use App\Models\User;
 use Faker\Provider\ar_EG\Person;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\PersonalAccessToken as PersonnalAccessToken;
+// model company
+use App\Models\Companies;
+use App\Models\Countries;
+use PHPUnit\Framework\Constraint\Count;
 
 class AuthController extends Controller
 {
     public function profile(Request $request)
     {
-        return response()->json(['status'=>true, 'message'=>'Profile utilisateur', 'data' => auth()->user()], 200,);
+        // remplacer 
+        $data = auth()->user();
+        $data->company = Companies::find($data->id_company);
+        $data->company->country = Countries::find($data->company->id_country);
+
+        return response()->json(['status'=>true, 'message'=>'Profile utilisateur', 'data' => $data], 200,);
     }
 
     public function login(Request $request)
@@ -49,10 +58,10 @@ class AuthController extends Controller
         try {
             $inputs = $request->all();
             $validator = Validator::make($inputs, [
-                'email' => 'email|unique:users,email',
+                'email' => 'email|unique:users,email,'.$request->user()->id,
             ]);
             if ($validator->fails()) {
-                return response()->json(['status'=>false, 'message'=>'Erreur de connexion', 'errors'=>$validator->errors()], 422,);
+                return response()->json(['status'=>false, 'message'=>'', 'errors'=>$validator->errors()], 422,);
             }
             $request->user()->update($inputs);
             return response()->json(['status'=>true, 'message'=>'Utilisateur modifier avec succés', 'data' => [
