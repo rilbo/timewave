@@ -32,38 +32,40 @@ export default function Register() {
             <Head title="Register" />
 
             <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="firstname" value="firstname" />
+                <div className='flex justify-between'>
+                    <div>
+                        <InputLabel htmlFor="firstname" value="Prénom" />
 
-                    <TextInput
-                        id="firstname"
-                        name="firstname"
-                        value={data.firstname}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        onChange={(e) => setData('firstname', e.target.value)}
-                        required
-                    />
+                        <TextInput
+                            id="firstname"
+                            name="firstname"
+                            value={data.firstname}
+                            className="mt-1 block"
+                            autoComplete="username"
+                            isFocused={true}
+                            onChange={(e) => setData('firstname', e.target.value)}
+                            required
+                        />
 
-                    <InputError message={errors.firstname} className="mt-2" />
-                </div>
+                        <InputError message={errors.firstname} className="mt-2" />
+                    </div>
 
-                <div>
-                    <InputLabel htmlFor="lastname" value="lastname" />
+                    <div>
+                        <InputLabel htmlFor="lastname" value="Nom" />
 
-                    <TextInput
-                        id="lastname"
-                        name="lastname"
-                        value={data.lastname}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        onChange={(e) => setData('lastname', e.target.value)}
-                        required
-                    />
+                        <TextInput
+                            id="lastname"
+                            name="lastname"
+                            value={data.lastname}
+                            className="mt-1 block"
+                            autoComplete="username"
+                            isFocused={true}
+                            onChange={(e) => setData('lastname', e.target.value)}
+                            required
+                        />
 
-                    <InputError message={errors.lastname} className="mt-2" />
+                        <InputError message={errors.lastname} className="mt-2" />
+                    </div>
                 </div>
 
                 <div className="mt-4">
@@ -84,7 +86,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
+                    <InputLabel htmlFor="password" value="Mot de passe" />
 
                     <TextInput
                         id="password"
@@ -101,7 +103,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel htmlFor="password_confirmation" value="Confirm Password" />
+                    <InputLabel htmlFor="password_confirmation" value="Confirmé mot de passe" />
 
                     <TextInput
                         id="password_confirmation"
@@ -122,11 +124,11 @@ export default function Register() {
                         href={route('login')}
                         className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
-                        Already registered?
+                        Déjà un compte ?
                     </Link>
 
                     <PrimaryButton className="ms-4" disabled={processing}>
-                        Register
+                        S'inscrire
                     </PrimaryButton>
                 </div>
             </form>
