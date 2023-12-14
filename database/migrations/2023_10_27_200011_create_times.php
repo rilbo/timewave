@@ -14,24 +14,28 @@ return new class extends Migration
         Schema::create('times', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            // date du jour
+            $table->date('date')->required();
             // work_leave - boolean
             $table->boolean('work_leave')->nullable();
             // Sick - boolean
             $table->boolean('sick')->nullable();
             // id_name_site_morning
-            $table->foreignId('id_name_site_morning')->constrained('name_site');
+            $table->foreignId('id_name_site_morning')->nullable();
             // begin_date_morning
-            $table->dateTime('begin_date_morning');
+            $table->Time('begin_date_morning')->nullable();
             // end_date_morning
-            $table->dateTime('end_date_morning');
+            $table->Time('end_date_morning')->nullable();
             // id_name_site_afternoon
-            $table->foreignId('id_name_site_afternoon')->constrained('name_site');
+            $table->foreignId('id_name_site_afternoon')->nullable();
             // begin_date_afternoon
-            $table->dateTime('begin_date_afternoon');
+            $table->Time('begin_date_afternoon')->nullable();
             // end_date_afternoon
-            $table->dateTime('end_date_afternoon');
+            $table->Time('end_date_afternoon')->nullable();
             // more_times
-            $table->integer('more_times')->nullable();
+            $table->integer('more_times')->nullable()->nullable();
+            // id_travel_zone
+            $table->foreignId('id_travel_zone')->nullable();
             // bowl - boolean
             $table->boolean('bowl')->nullable();
             // id_user
