@@ -9,6 +9,8 @@ class Travel_area extends Model
 {
     use HasFactory;
 
+    protected $table = 'travel_area';
+
     /**
      * The attributes that are mass assignable.
      *

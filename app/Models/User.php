@@ -93,4 +93,18 @@ class User extends Authenticatable
     {
         return substr(md5(rand()), 0, 8);
     }
+
+    /**
+     * Get the user's initials.
+     *
+     * @return string
+     */
+    public function getInitialsAttribute(): string
+    {
+        $initials = '';
+        $firstname = $this->firstname;
+        $lastname = $this->lastname;
+        $initials = $firstname[0].$lastname[0];
+        return $initials;
+    }
 }

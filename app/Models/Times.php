@@ -15,6 +15,7 @@ class Times extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'date',
         'work_leave',
         'sick',
         'id_name_site_morning',
@@ -24,6 +25,7 @@ class Times extends Model
         'begin_date_afternoon',
         'end_date_afternoon',
         'more_times',
+        'id_travel_zone',
         'bowl',
         'id_user',
         'id_company',
@@ -45,6 +47,10 @@ class Times extends Model
 
     public function name_site_afternoon() {
         return $this->belongsTo(Name_site::class, 'id_name_site_afternoon');
+    }
+
+    public function travel_zone() {
+        return $this->belongsTo(Travel_area::class, 'id_travel_zone');
     }
 
     /**
